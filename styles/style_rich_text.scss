@@ -1,0 +1,47 @@
+.text-editor {
+  width: 100%;
+  margin: 0 auto;
+}
+.ql-editor {
+  min-height: 100px;
+}
+
+/* Set dropdown font-families */
+.toolbar-container .ql-font span[data-label="Arial"]::before {
+  font-family: "arial";
+}
+.toolbar-container .ql-font span[data-label="Comic Sans"]::before {
+  font-family: "comic-sans";
+}
+.toolbar-container .ql-font span[data-label="Courier New"]::before {
+  font-family: "courier-new";
+}
+.toolbar-container .ql-font span[data-label="Georgia"]::before {
+  font-family: "georgia";
+}
+.toolbar-container .ql-font span[data-label="Helvetica"]::before {
+  font-family: "helvetica";
+}
+.toolbar-container .ql-font span[data-label="Lucida"]::before {
+  font-family: "lucida";
+}
+
+/* Set content font-families */
+.ql-font-arial {
+  font-family: "arial";
+}
+.ql-font-comic-sans {
+  font-family: "comic-sans";
+}
+.ql-font-courier-new {
+  font-family: "courier-new";
+}
+.ql-font-georgia {
+  font-family: "georgia";
+}
+.ql-font-helvetica {
+  font-family: "helvetica";
+}
+.ql-font-lucida {
+  font-family: "lucida";
+}

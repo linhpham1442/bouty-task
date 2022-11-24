@@ -1,0 +1,53 @@
+.horizontal-scrolling-container {
+    position: relative;
+    display: flex;
+    width: 100%;
+
+    .horizontal-scrolling-menu {
+        display: flex;
+        white-space: nowrap;
+        overflow-x: visible;
+        overflow-y: hidden;
+        -webkit-overflow-scrolling: touch;
+        margin-left: 38px;
+        margin-right: 38px;
+
+        scrollbar-width: none;
+        -ms-overflow-style: none;
+
+        &::-webkit-scrollbar {
+            display: none;
+        }
+    }
+
+    // .horizontal-scrolling-item {}
+
+    .paddle {
+        position: absolute;
+        cursor: pointer;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        width: 40px;
+    }
+
+    .left-paddle {
+        // background: linear-gradient(90deg, #FFFFFF 0%, rgba(255, 255, 255, 0) 100%);
+        background: #1a1a27;
+        left: 10px;
+        display: flex;
+        justify-content: flex-start;
+    }
+
+    .right-paddle {
+        // background: linear-gradient(270deg, #FFFFFF 0%, rgba(255, 255, 255, 0) 100%);
+        background: #1a1a27;
+        right: 10px;
+        display: flex;
+        justify-content: flex-end;
+    }
+
+    .hidden {
+        display: none;
+    }
+}

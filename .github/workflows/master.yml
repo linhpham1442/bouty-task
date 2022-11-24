@@ -1,0 +1,42 @@
+name: Production
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+env:
+  DEPLOY_NAME: "Work-FrontEnd-Prod"
+  TG_CHAT_ID: "-1001866554965"
+  TG_MESSAGE_URL: "https://api.telegram.org/bot5784236522:AAGOQ13jmHU0GUMGY-6gVVW2P2z26Vivzcc/sendMessage"
+
+jobs:
+  build_deploy:
+    runs-on: ubuntu-20.04
+    environment: production
+    steps:
+      - name: 'Deploy'
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.HOST }}
+          username: ${{ secrets.USERNAME }}
+          password: ${{ secrets.PASSWORD }}
+          port: ${{ secrets.PORT }}
+          script: |
+            cd /var/www/BountyTasks-Frontend
+            git reset HEAD --hard
+            git pull
+            yarn install
+            yarn build
+            pm2 restart ecosystem.config.js && pm2 save
+      - name: 'Notify'
+        run: |
+          curl \
+          --location \
+          --request POST '${{ env.TG_MESSAGE_URL }}' \
+          --header 'Content-Type: application/json' \
+          --data-raw '{
+            "chat_id": ${{ env.TG_CHAT_ID }},
+            "text": "Deployed: ${{ env.DEPLOY_NAME }}\nRun: https://github.com/SpinelProtocol/BountyTasks-Frontend/actions/runs/${{ github.run_id }}"
+          }'
