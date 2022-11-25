@@ -1,7 +1,7 @@
 import { DataDocList } from "./DataDocList";
 import React from "react";
 
-export const TutorialDoc = () => {
+const TutorialDoc = () => {
   return (
     <div>
       {DataDocList.map((item, index) => (
@@ -21,3 +21,5 @@ export const TutorialDoc = () => {
     </div>
   );
 };
+
+export default TutorialDoc

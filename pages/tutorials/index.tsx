@@ -1,8 +1,8 @@
 import Image from "next/image";
 import Link from "next/link";
-import { TutorialDoc } from "./TutorialDoc";
-import { TutorialGit } from "./TutorialGit";
-import { TutorialVideo } from "./TutorialVideo";
+import TutorialDoc from "./TutorialDoc";
+import TutorialGit from "./TutorialGit";
+import TutorialVideo from "./TutorialVideo";
 
 export default function Tutorials(props:any) {
   return (
@@ -21,9 +21,9 @@ export default function Tutorials(props:any) {
       </div>
       <div className="tutorial-list pt-16">
         <ul className="flex space-x-12 mb-12 text-24 ">
-          <Link className="hover:text-[#625DF5] active:text-[#625DF5]" href = "/tutorials//TutorialVideo">Video Series</Link>
+          <Link className="hover:text-[#625DF5] active:text-[#625DF5]" href = "/tutorials/TutorialVideo">Video Series</Link>
           <Link className="hover:text-[#625DF5] active:text-[#625DF5]" href= "/tutorials/TutorialDoc">Tutorial Document</Link>
-          <Link className="hover:text-[#625DF5] active:text-[#625DF5]" href= "/TutorialGit">Tutorial Git</Link>
+          <Link className="hover:text-[#625DF5] active:text-[#625DF5]" href= "/tutorials/TutorialGit">Tutorial Git</Link>
         </ul>
         <TutorialVideo />
         <TutorialDoc />

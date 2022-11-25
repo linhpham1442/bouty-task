@@ -3,7 +3,7 @@ import {
 } from './DataGitList';
 import React from 'react'
 
-export const TutorialGit = () => {
+const TutorialGit = () => {
   return (
     <div>
     {DataGitList.map((item, index) => (
@@ -23,3 +23,5 @@ export const TutorialGit = () => {
   </div>
   )
 }
+
+export default TutorialGit

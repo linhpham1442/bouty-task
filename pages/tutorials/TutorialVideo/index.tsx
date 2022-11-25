@@ -2,7 +2,7 @@ import Image from "next/image";
 import React from "react";
 import { Videos } from "./Videos";
 
-export const TutorialVideo = () => {
+const TutorialVideo = () => {
   return (
     <div className="">
       <div className="video col-span-3 grid">
@@ -19,3 +19,5 @@ export const TutorialVideo = () => {
     </div>
   );
 };
+
+export default TutorialVideo;
